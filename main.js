@@ -73,13 +73,14 @@ $cvv.addEventListener('keydown', (e) => {
 
 $eye.addEventListener('click', (e) => {
     let $sibling = document.getElementById('sibling');
-    if ($sibling.nextElementSibling.type === 'text') {
+    if ($sibling.nextElementSibling.type === 'password') {
+        $sibling.nextElementSibling.type = 'text';
+        $eye.firstElementChild.classList.remove('fa-eye');
+        $eye.firstElementChild.classList.add('fa-eye-slash');
+    } else {
         $sibling.nextElementSibling.type = 'password';
         $eye.firstElementChild.classList.remove('fa-eye-slash');
         $eye.firstElementChild.classList.add('fa-eye');
-    } else {
-        $sibling.nextElementSibling.type = 'text';
-        $eye.firstElementChild.classList.add('fa-eye-slash');
     }
 
 
