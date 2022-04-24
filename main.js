@@ -2,6 +2,7 @@
 const $card = document.getElementById('card');
 const $date = document.getElementById('date');
 const $cvv = document.getElementById('cvv');
+const $eye = document.getElementById('eye');
 
 // definiendo el cuantos caracteres son validos para cada input
 const maskCard = '0000-0000-0000-0000';
@@ -35,7 +36,6 @@ const handleInput = (mask, key, array) => {
             array.push(key);
         }
     }
-
 };
 
 
@@ -61,3 +61,29 @@ $date.addEventListener('keydown', (e) => {
     handleInput(maskDate, e.key, dateNumber);
     $date.value = dateNumber.join('');
 });
+
+$cvv.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+        return;
+    }
+    e.preventDefault();
+    handleInput(maskCvv, e.key, cvvNumber);
+    $cvv.value = cvvNumber.join('');
+});
+
+$eye.addEventListener('click', (e) => {
+    let $sibling = document.getElementById('sibling');
+    if ($sibling.nextElementSibling.type === 'text') {
+        $sibling.nextElementSibling.type = 'password';
+        $eye.firstElementChild.classList.remove('fa-eye-slash');
+        $eye.firstElementChild.classList.add('fa-eye');
+    } else {
+        $sibling.nextElementSibling.type = 'text';
+        $eye.firstElementChild.classList.add('fa-eye-slash');
+    }
+
+
+});
+
+console.log($eye.firstElementChild.classList);
+
