@@ -1,7 +1,23 @@
+body {
+    background-color: #081c15 !important;
+}
+
+
 #eye {
     position: absolute;
-    right: 10px;
-    top: 75%;
+    right: 75%;
+    top: 70%;
     transform: translate(-50%);
     cursor: pointer;
+}
+
+.gradient {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    -webkit-box-shadow: 10px 7px 14px -2px rgba(140, 140, 140, 0.84);
+    box-shadow: 10px 7px 14px -2px rgba(140, 140, 140, 0.84);
+}
+
+.title-card {
+    text-decoration: underline;
 }
